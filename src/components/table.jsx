@@ -14,8 +14,7 @@ const table = ({list,setList}) => {
 
             {list.map((item) => {
     return (
-      // eslint-disable-next-line react/jsx-key
-      <tr>
+      <tr key={Math.random}>
         <td>{item.description}</td>
         <td>{item.quantity}</td>
         <td>{item.price}</td>

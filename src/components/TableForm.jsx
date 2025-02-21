@@ -1,3 +1,5 @@
+
+import Table from "./table.jsx";
 const TableForm = ({ description, setDescription, quantity, setQuantity, price, setPrice, amount, setAmount,calcAmout,list,setList}) => {
   const addItem= (e) => {
     e.preventDefault();
@@ -55,15 +57,19 @@ const TableForm = ({ description, setDescription, quantity, setQuantity, price, 
               type="text"
               id="amount"
               value={amount}
-              readOnly="true"
+              readOnly={true}
             ></input>
           </div>
         </div>
-              <button
-              type="submit"
-              className="mt-4 bg-blue-500 text-white font-bold py-2 px-8 rounded hover:bg-blue-600 hover:text-white transition-all duration-150 hover:ring-4 hover:ring-blue-400"
-            >Add Item</button>
+        <button
+          type="submit"
+          className="mt-4 bg-blue-500 text-white font-bold py-2 px-8 rounded hover:bg-blue-600 hover:text-white transition-all duration-150 hover:ring-4 hover:ring-blue-400"
+        >
+          Add Item
+        </button>
       </form>
+
+      <Table list={list} setList={setList}></Table>
     </>
   );
 };
