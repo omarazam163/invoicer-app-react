@@ -1,26 +1,31 @@
-const table = ({description,amount,price,quantity}) => {
+const table = ({list,setList}) => {
   return (
     <>
-    <table className="w-full mt-5">
+      <table className="w-full mt-5">
         <thead>
-            <tr className="bg-gray-100 p-1">
-                <td className="font-bold">Item Description</td>
-                <td className="font-bold">Quantity</td>
-                <td className="font-bold">Price</td>
-                <td className="font-bold">Amount</td>
-            </tr> 
+          <tr className="bg-gray-100 p-1">
+            <td className="font-bold">Item Description</td>
+            <td className="font-bold">Quantity</td>
+            <td className="font-bold">Price</td>
+            <td className="font-bold">Amount</td>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>{description}</td>
-                <td>{quantity}</td>
-                <td>{price}</td>
-                <td>{amount}</td>
-            </tr>
+
+            {list.map((item) => {
+    return (
+      // eslint-disable-next-line react/jsx-key
+      <tr>
+        <td>{item.description}</td>
+        <td>{item.quantity}</td>
+        <td>{item.price}</td>
+        <td>{item.amount}</td>
+      </tr>
+    );})}
         </tbody>
-    </table>
+      </table>
     </>
-  )
+  );
 }
 
 export default table

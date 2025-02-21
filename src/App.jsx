@@ -49,10 +49,8 @@ function App() {
             dueDate={dueDate}
           ></Dates>
           <Table 
-          description={description}
-          quantity={quantity}
-          price={price}
-          amount={amount}
+          list={list}
+          setList={setList}
           ></Table>
           <Notes notes={notes}></Notes>
           <Footer
@@ -224,6 +222,8 @@ function App() {
                 amount={amount}
                 setAmount={setAmount}
                 calcAmout={calcAmout}
+                list={list}
+                setList={setList}
               ></TableForm>
             </div>
             <div className="w-full">
